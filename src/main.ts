@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import MyComponent from './sub';
+import MyComponent from './sub.vue';
 
 new Vue({
     el: '#app',

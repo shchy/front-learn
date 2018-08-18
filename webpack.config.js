@@ -1,3 +1,5 @@
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
 module.exports = {
     mode: 'development',
     entry: './src/main.ts',
@@ -8,27 +10,39 @@ module.exports = {
     module: {
         rules: [
             {
-                // 拡張子 .ts の場合
+                test: /\.vue$/,
+                use: 'vue-loader'
+            },
+            {
                 test: /\.ts$/,
-                // TypeScript をコンパイルする
-                use: 'ts-loader'
+                use: [{
+                    loader: 'ts-loader',
+                    options: {
+                        appendTsSuffixTo: [/\.vue$/]
+                    }
+                }]
+
+            },
+            {
+                test: /\.(css|sass|scss)$/,
+                loader: 'sass-loader',
             },
         ]
     },
-    // import 文で .ts ファイルを解決するため
     resolve: {
         extensions: [
-            '.ts'
+            '.ts', '.vue'
         ],
-        // Webpackで利用するときの設定
         alias: {
             vue: 'vue/dist/vue.js'
         }
     },
-
+    plugins: [
+        new VueLoaderPlugin()
+    ],
     devServer: {
         contentBase: `${__dirname}/dist`,
-        port: 5678,
+        port: 8080,
     },
 
 }
