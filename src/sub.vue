@@ -8,7 +8,7 @@
     </div>
 </template>
 
-<style>
+<style lang="scss">
 body{
     color:blue;
 }
