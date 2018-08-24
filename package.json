@@ -13,6 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^1.0.0",
+    "node-sass": "^4.9.3",
+    "style-loader": "^0.22.1",
     "ts-loader": "^4.5.0",
     "typescript": "^3.0.1",
     "vue-loader": "^15.4.0",

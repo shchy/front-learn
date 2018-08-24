@@ -10,6 +10,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.css$/,
+                loader: ['style-loader', 'css-loader']
+            },
+            {
                 test: /\.vue$/,
                 use: 'vue-loader'
             },
@@ -23,15 +27,12 @@ module.exports = {
                 }]
 
             },
-            {
-                test: /\.(css|sass|scss)$/,
-                loader: 'sass-loader',
-            },
+
         ]
     },
     resolve: {
         extensions: [
-            '.ts', '.vue'
+            '.ts', '.vue', '.js', '.jsx'
         ],
         alias: {
             vue: 'vue/dist/vue.js'
