@@ -1,6 +1,6 @@
 <template>
-    <div>
-        login
+    <div class="login-container">
+        <h1>Hello Vue.js!</h1>
     </div>
 </template>
 
@@ -11,6 +11,7 @@
 import Vue from "vue";
 
 export default {
+  name: "Login",
   data() {
     return {};
   },

@@ -1,5 +1,6 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
+
 module.exports = {
     mode: 'development',
     entry: './src/main.ts',
@@ -37,7 +38,8 @@ module.exports = {
             '.ts', '.vue', '.js', '.jsx'
         ],
         alias: {
-            vue: 'vue/dist/vue.js'
+            vue: 'vue/dist/vue.js',
+            '@': `${__dirname}/src`
         }
     },
     plugins: [
@@ -46,6 +48,7 @@ module.exports = {
     devServer: {
         contentBase: `${__dirname}`,
         port: 8080,
+        historyApiFallback: true,
     },
 
 }
