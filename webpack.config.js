@@ -44,7 +44,7 @@ module.exports = {
         new VueLoaderPlugin()
     ],
     devServer: {
-        contentBase: `${__dirname}/dist`,
+        contentBase: `${__dirname}`,
         port: 8080,
     },
 

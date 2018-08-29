@@ -1,15 +1,9 @@
 import Vue from 'vue';
-import MyComponent from './sub.vue';
+import router from './router';
+import App from './App.vue';
 
 new Vue({
     el: '#app',
-    template: `
-    <div class="app">
-        <h1>Hello Vue.js!</h1>
-        <my-component message="My Counter for TypeScript"></my-component>
-    </div>`,
-
-    components: {
-        'my-component': MyComponent
-    }
+    router,
+    render: h => h(App)
 });
